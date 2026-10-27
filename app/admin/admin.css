@@ -1,0 +1,592 @@
+.admin-root {
+  background: #f0eee9;
+  min-height: 100vh;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-login {
+  width: calc(100% - 40px);
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 65px 0;
+}
+.admin-brand {
+  font-size: 33px;
+  display: block;
+  margin-bottom: 30px;
+}
+.admin-login h1 {
+  font-size: 30px;
+  margin: 20px 0 12px;
+}
+.admin-login > p {
+  font-size: 13px;
+}
+.admin-login form {
+  margin: 30px 0;
+}
+.admin-login form .button {
+  width: 100%;
+  margin-top: 10px;
+}
+.admin-shell {
+  display: grid;
+  grid-template-columns: 225px 1fr;
+  min-height: 100vh;
+}
+.admin-sidebar {
+  background: #000;
+  color: white;
+  padding: 30px 23px;
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.admin-sidebar .admin-brand {
+  font-size: 29px;
+  margin-bottom: 8px;
+}
+.admin-sidebar > .micro {
+  font-size: 8px;
+}
+.admin-sidebar nav {
+  display: grid;
+  margin: 30px 0;
+  gap: 0;
+}
+.admin-sidebar nav a {
+  padding: 12px 0;
+  border-bottom: 1px solid #444;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.admin-sidebar nav a:hover {
+  color: #c3c3c3;
+}
+.admin-sidebar > .text-link {
+  align-self: start;
+  margin-top: auto;
+}
+.admin-sidebar > form {
+  margin-top: 20px;
+}
+.admin-sidebar > form button {
+  width: 100%;
+  font-size: 12px;
+  padding: 13px 15px;
+  min-height: 45px;
+}
+.admin-content {
+  padding: 40px;
+  min-width: 0;
+  max-width: 1700px;
+}
+.admin-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+.admin-title h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 12px 0 10px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.admin-title p {
+  font-size: 13px;
+  color: #555;
+  max-width: 650px;
+  margin: 0;
+}
+.admin-title .button {
+  flex-shrink: 0;
+}
+.admin-panel {
+  border: 1px solid #b9b7b2;
+  padding: 25px;
+  background: #faf9f6;
+  margin-bottom: 20px;
+  min-width: 0;
+}
+.admin-panel h2 {
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.admin-panel summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  min-height: 30px;
+}
+.admin-panel summary:before {
+  content: "＋";
+  font-size: 17px;
+  margin-right: 8px;
+}
+.admin-panel[open] > summary:before {
+  content: "−";
+}
+.admin-panel summary > span {
+  font-size: 11px;
+  font-weight: 400;
+  margin-left: auto;
+  line-height: 1.5;
+  text-align: right;
+}
+.admin-form {
+  margin-top: 25px;
+  border-top: 1px solid #ddd;
+  padding-top: 22px;
+}
+.check {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  font-size: 12px;
+  margin: 17px 0;
+}
+.check input {
+  width: 17px;
+  height: 17px;
+  accent-color: #000;
+  flex-shrink: 0;
+}
+.help {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.7;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.stat {
+  border: 1px solid #b9b7b2;
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+}
+.stat > span {
+  font-size: 12px;
+}
+.stat > strong {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+}
+.table-scroll {
+  overflow: auto;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 680px;
+}
+.admin-table th {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: #555;
+  padding: 12px 10px;
+  border-bottom: 1px solid #000;
+}
+.admin-table td {
+  font-size: 12px;
+  padding: 17px 10px;
+  border-bottom: 1px solid #ccc;
+  line-height: 1.7;
+  vertical-align: top;
+}
+.admin-table small {
+  color: #555;
+}
+.admin-table .status {
+  font-size: 9px;
+}
+.admin-empty {
+  font-size: 13px;
+  padding: 30px 10px;
+}
+.admin-flash {
+  border-left: 3px solid #000;
+  padding: 16px 20px;
+  background: #e3e1db;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+.review-flag {
+  display: block;
+  color: #8a1515;
+  font-size: 11px;
+}
+.admin-filters {
+  display: flex;
+  gap: 15px;
+  align-items: end;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+.admin-filters > .field {
+  margin: 0;
+  min-width: 150px;
+  flex: 1;
+}
+.admin-filters .button {
+  min-height: 48px;
+  padding: 13px 20px;
+}
+.admin-filters > .text-link {
+  margin-bottom: 12px;
+  font-size: 11px;
+}
+.admin-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 15px 0;
+}
+.admin-inline .button {
+  padding: 13px 16px;
+  min-height: 44px;
+  font-size: 12px;
+}
+.hours-field {
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+}
+.hours-field input {
+  max-width: 520px;
+}
+.admin-list-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  padding: 17px 0;
+  border-top: 1px solid #ddd;
+  font-size: 13px;
+}
+.admin-list-row .button {
+  padding: 12px 18px;
+  min-height: 44px;
+}
+.admin-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.admin-gallery > .admin-panel {
+  margin: 0;
+  min-width: 0;
+}
+.admin-gallery img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+.delete-photo {
+  border-top: 1px solid #ccc;
+  margin-top: 22px;
+  padding-top: 18px;
+}
+.delete-photo > summary {
+  font-size: 12px;
+  font-weight: 400;
+  justify-content: start;
+}
+.service-admin-photo {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.service-admin-photo img {
+  object-fit: cover;
+}
+.reconciliation {
+  border: 1px solid #8a1515;
+  padding: 20px;
+  margin-top: 25px;
+}
+.reconciliation h3 {
+  font-size: 17px;
+}
+.reconciliation p {
+  font-size: 13px;
+}
+.calendar-controls {
+  margin-bottom: 25px;
+  gap: 20px;
+}
+.admin-calendar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+.admin-calendar.week {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.calendar-day {
+  border: 1px solid #b9b7b2;
+  padding: 20px;
+  background: #faf9f6;
+  min-width: 0;
+}
+.calendar-day h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+.calendar-day h3 {
+  font-size: 12px;
+  margin: 25px 0 15px;
+  font-weight: 500;
+}
+.calendar-event {
+  display: grid;
+  gap: 5px;
+  padding: 13px;
+  border: 1px solid #000;
+  margin: 10px 0;
+  font-size: 12px;
+}
+.calendar-event > span:first-of-type {
+  font-weight: 600;
+}
+.calendar-event.event-confirmed {
+  background: #000;
+  color: #fff;
+}
+.calendar-event.event-pending {
+  background: #e3e1db;
+  border-style: dashed;
+}
+.calendar-event.event-cancelled,
+.calendar-event.event-expired {
+  opacity: 0.6;
+}
+.calendar-event.event-completed {
+  border-width: 3px;
+}
+.calendar-block {
+  display: block;
+  padding: 13px;
+  background: repeating-linear-gradient(
+    135deg,
+    #dedcd6,
+    #dedcd6 5px,
+    #ebe9e3 5px,
+    #ebe9e3 10px
+  );
+  font-size: 11px;
+  border: 1px solid #858585;
+  margin: 10px 0;
+}
+.admin-slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.week .admin-slots {
+  grid-template-columns: 1fr 1fr;
+}
+.admin-slots details {
+  border: 1px solid #b9b7b2;
+  padding: 10px;
+  font-size: 12px;
+  min-width: 0;
+}
+.admin-slots summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font:
+    12px "Courier New",
+    monospace;
+}
+.admin-slots details > div {
+  display: grid;
+  gap: 10px;
+  padding-top: 13px;
+  font-size: 10px;
+}
+.admin-slots a {
+  text-decoration: underline;
+  line-height: 1.6;
+}
+.admin-content .booking-summary h2 {
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  line-height: 1.2;
+}
+.admin-content .booking-layout {
+  grid-template-columns: 1fr 250px;
+  gap: 25px;
+}
+.admin-content .booking-summary {
+  padding: 18px;
+}
+.admin-content .booking-summary > .micro:last-child {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .admin-shell {
+    grid-template-columns: 195px 1fr;
+  }
+  .admin-content {
+    padding: 30px 25px;
+  }
+  .admin-sidebar {
+    padding: 25px 18px;
+  }
+  .admin-sidebar .admin-brand {
+    font-size: 25px;
+  }
+  .admin-title {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .admin-content .booking-layout {
+    grid-template-columns: 1fr;
+  }
+  .admin-content .booking-summary {
+    grid-row: 1;
+    position: static;
+  }
+  .admin-calendar.week {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .admin-shell {
+    grid-template-columns: 1fr;
+  }
+  .admin-sidebar {
+    position: relative;
+    height: auto;
+    padding: 18px 20px;
+    display: block;
+  }
+  .admin-sidebar .admin-brand {
+    font-size: 26px;
+    margin-bottom: 5px;
+  }
+  .admin-sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    margin: 15px 0;
+  }
+  .admin-sidebar nav a {
+    font-size: 11px;
+    padding: 7px 0;
+    border: 0;
+    gap: 10px;
+  }
+  .admin-sidebar nav a > span {
+    display: none;
+  }
+  .admin-sidebar > .text-link {
+    font-size: 10px;
+    margin: 0;
+  }
+  .admin-sidebar > form {
+    display: inline-block;
+    margin: 0 0 0 20px;
+  }
+  .admin-sidebar > form button {
+    font-size: 10px;
+    padding: 6px 12px;
+    min-height: 30px;
+  }
+  .admin-content {
+    padding: 25px 17px;
+  }
+  .admin-title h1 {
+    font-size: 28px;
+  }
+  .admin-title p {
+    font-size: 12px;
+  }
+  .admin-panel {
+    padding: 20px 16px;
+  }
+  .admin-panel summary {
+    font-size: 14px;
+    align-items: start;
+  }
+  .admin-panel summary > span {
+    font-size: 10px;
+  }
+  .stats-grid {
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat {
+    padding: 15px;
+  }
+  .stat > strong {
+    font-size: 35px;
+  }
+  .admin-gallery {
+    grid-template-columns: 1fr;
+  }
+  .admin-filters {
+    gap: 12px;
+  }
+  .admin-filters > .field {
+    min-width: 120px;
+  }
+  .admin-filters .button {
+    min-height: 44px;
+  }
+  .hours-field {
+    grid-template-columns: 75px 1fr;
+    font-size: 11px;
+  }
+  .admin-calendar.week {
+    grid-template-columns: 1fr;
+  }
+  .admin-slots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .week .admin-slots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .calendar-controls {
+    gap: 10px;
+  }
+  .calendar-controls > .text-link {
+    font-size: 11px;
+  }
+  .admin-content .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .admin-content .booking-summary {
+    padding: 15px;
+  }
+  .admin-inline .check {
+    width: 100%;
+  }
+}

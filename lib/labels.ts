@@ -1,0 +1,15 @@
+export const statusLabel: Record<string, string> = {
+  PENDING: "Pendiente",
+  CONFIRMED: "Confirmada",
+  COMPLETED: "Completada",
+  CANCELLED: "Cancelada",
+  NO_SHOW: "No asistió",
+  EXPIRED: "Expirada",
+  PAID: "Pagado",
+  FAILED: "Fallido",
+  REFUNDED: "Reembolsado",
+  NOT_REQUIRED: "Por cotizar",
+  CASH: "Pagar en el local",
+  MERCADO_PAGO: "Mercado Pago",
+  QUOTE: "Cotización",
+};

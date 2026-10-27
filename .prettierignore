@@ -1,0 +1,10 @@
+node_modules
+.next
+.next-test
+lib/generated
+artifacts
+test-results
+playwright-report
+.env*
+pnpm-lock.yaml
+public/fonts/licenses

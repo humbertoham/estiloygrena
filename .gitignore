@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.next-test/
+.env
+.env.*
+!.env.example
+coverage/
+test-results/
+playwright-report/
+artifacts/
+lib/generated/
+*.tsbuildinfo
