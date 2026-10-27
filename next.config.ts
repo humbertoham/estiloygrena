@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
+import { environmentUrl } from "./lib/environment";
 const remotePatterns = process.env.R2_PUBLIC_URL
   ? [
       {
         protocol: "https" as const,
-        hostname: new URL(process.env.R2_PUBLIC_URL).hostname,
+        hostname: environmentUrl("R2_PUBLIC_URL", process.env.R2_PUBLIC_URL)
+          .hostname,
         pathname: "/**",
       },
     ]

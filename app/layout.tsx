@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { environmentUrl } from "@/lib/environment";
 import "./globals.css";
 const gothic = localFont({
   src: "../public/fonts/UnifrakturCook-Bold.ttf",
@@ -15,7 +16,8 @@ const editorial = localFont({
   display: "swap",
 });
 export const metadata: Metadata = {
-  metadataBase: new URL(
+  metadataBase: environmentUrl(
+    "NEXT_PUBLIC_APP_URL",
     process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   ),
   title: {

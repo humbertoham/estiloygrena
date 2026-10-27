@@ -17,6 +17,20 @@ La configuración original está en `.env`. `.env.local` tiene prioridad y conti
 
 ## Base de datos y seguridad de los datos anteriores
 
+### Error `Failed to load config file ... TypeError: Invalid URL` en Vercel
+
+El build ejecuta `prisma generate` antes de Next.js. `DATABASE_URL` debe estar configurada en Vercel; los archivos locales `.env` y `.env.local` están ignorados y no se transfieren con el código. La configuración ahora valida las URL e indica el nombre de la variable incorrecta sin imprimir su valor.
+
+En **Project → Settings → Environment Variables**, agrega los valores para el entorno del despliegue (Production o Preview):
+
+- `DATABASE_URL`: copia el valor de `.env.local`, conservando `schema=estilo_greenfield`. Introduce solo el valor, sin `DATABASE_URL=` ni comillas.
+- `DIRECT_URL`: opcional; déjala sin configurar si no la necesitas. Si se establece, debe apuntar a la misma base. El código conserva el esquema de `DATABASE_URL`.
+- Las variables `R2_*` del `.env`; `R2_PUBLIC_URL` debe comenzar con `https://`.
+- `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `ADMIN_SESSION_SECRET` y `CRON_SECRET`, con valores propios del despliegue.
+- `NEXT_PUBLIC_APP_URL`: URL completa del sitio, incluyendo `https://`.
+
+Después de guardar, realiza un nuevo **Redeploy** para aplicar las variables. No subas archivos de secretos al repositorio. [Documentación de variables de entorno de Vercel](https://vercel.com/docs/environment-variables).
+
 Se inspeccionó la base existente antes de escribir. La aplicación nueva usa exclusivamente el esquema PostgreSQL **`estilo_greenfield`** mediante `?schema=estilo_greenfield` en `DATABASE_URL`. Se aplicaron las cuatro migraciones y se importaron las fotos a registros nuevos. Las tablas del esquema `public` anterior se conservaron.
 
 Para producción se recomienda una rama/base Neon dedicada, con las mismas migraciones. `DIRECT_URL` es opcional para Prisma CLI; si no se proporciona, la configuración deriva el endpoint directo de Neon retirando `-pooler` del hostname. Prisma Client usa el endpoint de `DATABASE_URL` y su esquema explícito.
